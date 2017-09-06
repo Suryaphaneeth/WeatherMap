@@ -99,13 +99,18 @@ class MyThread(threading.Thread):
         int(lst.get('dt'))))
 
     def weather_map(self):
+        self.layers_list = ['clouds_new', 'precipitation_new', 'pressure_new', 'wind_new', 'temp_new']
         global API_key, city_list
         start_time = time.time()
         owm_obj = owm.OWM(API_key)
         for city in city_list:
-            forecast_data = owm_obj.weather_map(city[0])
-            maps.insert_one(forecast_data)
-        time.sleep((15) - (time.time() - start_time)) # Three hours of sleep
+            for layers in self.layers_list:
+                forecast_url = owm_obj.weather_map(city[0], layers)
+                ts = time.time()
+                st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+                map_doc = {st :{str(city[0]):str(forecast_url)}}
+                maps.insert_one(map_doc)
+        time.sleep((40) - (time.time() - start_time))
         start_time = time.time()
 
     def display_map(self):
@@ -116,7 +121,7 @@ class MyThread(threading.Thread):
         docus = maps.find()
         for ress in docus:
             for key in ress:
-                li.append(float(key))
+                li.append(float(time.mktime(datetime.datetime.strptime(key, "%Y-%m-%d %H:%M:%S").timetuple())))
         li = sorted(li)
         img_url = ress.get(li[-1])
         img = mpimg.imread(img_url)
@@ -134,11 +139,11 @@ def c_to_f(val):
     f = ((9.0/5)*int(val)) + 32
     return f
 
-thread1 = MyThread('Config_file_reloader_thread')
+thread1 = MyThread('Config_file_thread')
 thread2 = MyThread('Daily_forecast_thread')
-thread3 = MyThread('Hourly forecast thread')
-thread4 = MyThread('Current_Weather_maps_thread')
-thread5 = MyThread('Latest_weather_map_displayer_thread')
+thread3 = MyThread('Hourly_forecast_thread')
+thread4 = MyThread('Weather_maps_thread')
+thread5 = MyThread('Weather_map_displayer_thread')
 
 thread1.config_refresh()
 thread2.daily_forecast()

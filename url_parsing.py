@@ -20,16 +20,19 @@ class OWM(object):
         self.data_dictionary = self.get_dict(self.api_url)
         return self.data_dictionary
 
-    def weather_map(self, city):
+    def weather_map(self, city, layer):
         url_list = {}
         self.lat = self.getLatitude(city)
         self.lon = self.getLongitude(city)
-        self.layers_list = ['clouds_new', 'precipitation_new', 'pressure_new', 'wind_new', 'temp_new']
-        for layer in self.layers_list:
-            api_url = "http://tile.openweathermap.org/{}/5/{}/{}.png?appid={}".format(self.lat, self.lon, self.API_key, layer)
-            datetime.datetime.now().strftime("%A, %d. %B %Y %I:%M%p")
-            url_list = {strtime:{str(layer):str(api_url)}}
-        return url_list
+        api_url = "http://tile.openweathermap.org/{}/5/{}/{}.png?appid={}".format(self.lat, self.lon, self.API_key, layer)
+        return api_url
+
+#        for layer in self.layers_list:
+#            api_url = "http://tile.openweathermap.org/{}/5/{}/{}.png?appid={}".format(self.lat, self.lon, self.API_key, layer)
+#            ts = time.time()
+#            st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+#            url_list = {st:{str(layer):str(api_url)}}
+#        return url_list
 
     def get_dict(self, api_url):
         with urllib.request.urlopen(api_url) as url:
