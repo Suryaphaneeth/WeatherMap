@@ -22,6 +22,8 @@ resources:
   - repository: walmart_predictions_kaggle
     type: github
     name: Suryaphaneeth/walmart_predictions_kaggle
+    endpoint: MyContosoServiceConnection   
+
 
 steps:
 - script: echo Hello, world!
