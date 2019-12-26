@@ -13,8 +13,8 @@ pool:
 resources:
   pipelines:
     - pipeline: 
-      project: Test
-      source: test
+      project: 'Test'
+      source: 'test'
       trigger:     # optional; Triggers are not enabled by default.
         branches:  
           include: [master]      
