@@ -14,7 +14,7 @@ resources:
   pipelines:
     - pipeline: 
       project: Test
-      source: Suryaphaneeth.walmart_predictions_kaggle
+      source: test
       trigger:     # optional; Triggers are not enabled by default.
         branches:  
           include: [master]      
