@@ -17,8 +17,11 @@ resources:
       source: test
       trigger:     # optional; Triggers are not enabled by default.
         branches:  
-          include: [master]      
-
+          include: [master]   
+  repositories:
+  - repository: walmart_predictions_kaggle
+    type: github
+    name: Suryaphaneeth/walmart_predictions_kaggle
 
 steps:
 - script: echo Hello, world!
