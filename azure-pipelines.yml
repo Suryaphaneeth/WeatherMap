@@ -11,14 +11,6 @@ pool:
 
 
 resources:
-  pipelines:
-    - pipeline: Test
-      project: Test
-      source: test
-      trigger:     # optional; Triggers are not enabled by default.
-        branches:  
-          include:  
-          - master  
   repositories:
   - repository: walmart_predictions_kaggle
     type: github
