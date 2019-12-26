@@ -22,7 +22,7 @@ resources:
   - repository: walmart_predictions_kaggle
     type: github
     name: Suryaphaneeth/walmart_predictions_kaggle
-    endpoint: MyContosoServiceConnection   
+    endpoint: Suryaphaneeth   
 
 
 steps:
