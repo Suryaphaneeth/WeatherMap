@@ -9,6 +9,17 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+
+resources:
+  pipelines:
+    - pipeline: 
+      project: Test
+      source: Suryaphaneeth.walmart_predictions_kaggle
+      trigger:     # optional; Triggers are not enabled by default.
+        branches:  
+          include: [master]      
+
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
