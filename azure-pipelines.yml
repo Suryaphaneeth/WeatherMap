@@ -13,7 +13,7 @@ pool:
 resources:
   pipelines:
     - pipeline: 
-      project: 'Test'
+      project: 1dc5124d-c084-4343-bb4f-87b88e7d2eb6
       source: test
       trigger:     # optional; Triggers are not enabled by default.
         branches:  
