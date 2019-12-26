@@ -23,6 +23,9 @@ resources:
     type: github
     name: Suryaphaneeth/walmart_predictions_kaggle
     endpoint: Suryaphaneeth   
+    trigger:     # optional; Triggers are not enabled by default.
+      branches:  
+        include: [master]   
 
 
 steps:
