@@ -25,7 +25,7 @@ steps:
     definition: '1'
     specificBuildWithTriggering: true
     buildVersionToDownload: 'latest'
-    targetPath: './'
+    targetPath: '$(Pipeline.Workspace)'
 
 - task: DownloadPipelineArtifact@2
   inputs:
@@ -40,4 +40,4 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'echo $(ls $(Agent.BuildDirectory))'
+    script: 'echo $(ls $(Pipeline.Workspace))'
