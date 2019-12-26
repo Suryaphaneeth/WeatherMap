@@ -17,7 +17,8 @@ resources:
       source: test
       trigger:     # optional; Triggers are not enabled by default.
         branches:  
-          include: [master]   
+          include:  
+          - master  
   repositories:
   - repository: walmart_predictions_kaggle
     type: github
@@ -25,8 +26,8 @@ resources:
     endpoint: Suryaphaneeth   
     trigger:     # optional; Triggers are not enabled by default.
       branches:  
-        include: [master]   
-
+        include:  
+        - master
 
 steps:
 
