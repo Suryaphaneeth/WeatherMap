@@ -14,7 +14,7 @@ resources:
   pipelines:
     - pipeline: 
       project: 'Test'
-      source: 'test'
+      source: test
       trigger:     # optional; Triggers are not enabled by default.
         branches:  
           include: [master]      
