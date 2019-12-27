@@ -10,26 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 
-resources:
-  pipelines:
-  - pipeline: Idontcare
-    project: Test
-    source: Test
-    trigger: 
-      branches:
-        include: 
-        - master
-  # repositories:
-  # - repository: walmart_predictions_kaggle
-  #   type: github
-  #   name: Suryaphaneeth/walmart_predictions_kaggle
-  #   endpoint: Suryaphaneeth   
-  #   trigger:     # optional; Triggers are not enabled by default.
-  #     branches:  
-  #       include:  
-  #       - master
 
 steps:
+
 
 - task: DownloadPipelineArtifact@2
   inputs:
@@ -39,6 +22,8 @@ steps:
     specificBuildWithTriggering: true
     buildVersionToDownload: 'latest'
     targetPath: './'
+
+
 
 - task: DownloadPipelineArtifact@2
   inputs:
@@ -59,3 +44,23 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'echo $(ls)'
+
+resources:
+  pipelines:
+  - pipeline: Idontcare
+    project: Test
+    source: Test
+    branch: master
+    trigger: 
+      branches:
+        include: 
+        - master
+  repositories:
+  - repository: walmart_predictions_kaggle
+    type: github
+    name: Suryaphaneeth/walmart_predictions_kaggle
+    endpoint: Suryaphaneeth   
+    trigger:     # optional; Triggers are not enabled by default.
+      branches:  
+        include:  
+        - master
