@@ -12,7 +12,7 @@ pool:
 
 resources:
   pipelines:
-  - pipeline: 
+  - pipeline: Idontcare
     project: Test
     source: Test
     trigger: 
