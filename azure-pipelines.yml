@@ -12,7 +12,7 @@ pool:
 
 resources:
   pipelines:
-  - pipeline: Idontcare
+  - pipeline: Test_predict
     project: Test
     source: Test
     branch: master
