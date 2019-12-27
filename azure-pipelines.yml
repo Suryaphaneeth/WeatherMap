@@ -13,8 +13,8 @@ pool:
 resources:
   pipelines:
   - pipeline: Idontcare
-    project: Test
-    source: suryaphaneeth/Test
+    project: suryaphaneeth/Test
+    source: Test
     branch: master
     trigger: 
       branches:
