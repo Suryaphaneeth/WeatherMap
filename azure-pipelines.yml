@@ -14,7 +14,7 @@ resources:
   pipelines:
   - pipeline: Idontcare
     project: suryaphaneeth/Test
-    source: Test
+    source: suryaphaneeth/Test/Pipelines/Test
     branch: master
     trigger: 
       branches:
