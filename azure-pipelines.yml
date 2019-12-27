@@ -14,7 +14,7 @@ resources:
   pipelines:
   - pipeline: Test_predict
     project: Test
-    source: Test
+    source: Test_predict
     branch: master
     trigger: 
       branches:
