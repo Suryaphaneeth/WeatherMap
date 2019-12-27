@@ -13,7 +13,7 @@ pool:
 resources:
   pipelines:
   - pipeline: Test
-    source: test
+    source: Test
     trigger: 
       branches:
       - master
