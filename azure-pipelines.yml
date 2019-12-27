@@ -13,6 +13,7 @@ pool:
 resources:
   pipelines:
   - pipeline: Test
+    project: Test
     source: Test
     trigger: 
       branches:
