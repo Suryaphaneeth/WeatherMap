@@ -12,7 +12,7 @@ pool:
 
 resources:
   pipelines:
-  - pipeline: Test
+  - pipeline: 
     project: Test
     source: Test
     trigger: 
