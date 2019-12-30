@@ -11,15 +11,12 @@ pool:
 
 
 resources:
-
-  repositories:
-  - repository: uiugku
-    type: github
-    name: Suryaphaneeth/walmart_predictions_kaggle
-    endpoint: Suryaphaneeth   
-    trigger:     # optional; Triggers are not enabled by default.
-      branches:  
-        include:  
+  pipelines:
+  - pipeline: some_test
+    source: Test_predict 
+    trigger: 
+      branches:
+        include: 
         - master
 
 steps:
