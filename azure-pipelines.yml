@@ -12,8 +12,8 @@ pool:
 
 resources:
   pipelines:
-    - pipeline: Test
-      source: Test_pred
+    - pipeline: aoshdbansldkalisdn
+      source: Test_predict
       trigger: 
         branches:
           include: 
