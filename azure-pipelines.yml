@@ -21,6 +21,12 @@ resources:
 
 steps:
 
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'echo $(ls)'
+    
 - task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'specific'
