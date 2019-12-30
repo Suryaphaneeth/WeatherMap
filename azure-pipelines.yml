@@ -12,7 +12,7 @@ pool:
 
 resources:
   pipelines:
-  - pipeline: some_test
+  - pipeline: Test_predict
     source: Test_predict 
     trigger: 
       branches:
