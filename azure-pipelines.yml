@@ -26,7 +26,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'echo $(ls)'
-    
+
 - task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'specific'
@@ -45,11 +45,6 @@ steps:
     buildVersionToDownload: 'latest'
     targetPath: '$(Agent.BuildDirectory)'
 
-
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'cp $(Agent.BuildDirectory)/test/* ./'
 
 - task: PowerShell@2
   inputs:
