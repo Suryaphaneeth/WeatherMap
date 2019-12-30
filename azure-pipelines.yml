@@ -13,7 +13,7 @@ pool:
 resources:
   pipelines:
     - pipeline: Test
-      source: Test_predict 
+      source: Test_pred
       trigger: 
         branches:
           include: 
