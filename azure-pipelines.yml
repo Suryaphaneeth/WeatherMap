@@ -36,17 +36,7 @@ steps:
     buildVersionToDownload: 'latest'
     targetPath: './'
 
-- task: DownloadPipelineArtifact@2
-  inputs:
-    buildType: 'specific'
-    project: '1dc5124d-c084-4343-bb4f-87b88e7d2eb6'
-    definition: '1'
-    specificBuildWithTriggering: true
-    buildVersionToDownload: 'latest'
-    targetPath: '$(Agent.BuildDirectory)'
-
-
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'echo $(ls)'
+    script: 'echo $(ls test)'
