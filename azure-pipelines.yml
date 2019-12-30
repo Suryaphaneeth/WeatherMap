@@ -11,9 +11,11 @@ pool:
 
 
 resources:
-  pipelines:
-  - pipeline: Test_predict
-    source: Test_predict 
+  repositories:
+  - repository: walmart_predictions_kaggle
+    type: github
+    name: Suryaphaneeth/walmart_predictions_kaggle
+    endpoint: Suryaphaneeth
     trigger: 
       branches:
         include: 
